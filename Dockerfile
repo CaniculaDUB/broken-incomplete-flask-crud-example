@@ -1,7 +1,9 @@
-FROM python:3.8-alpine
+FROM ubuntu:latest
 COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN apt update && apt -y install libmysqlclient-dev
+RUN apt -y install python3-pip
+RUN pip3 install -r requirements.txt
 COPY . /app
-ENTRYPOINT [ "python" ]
-CMD ["app.py" ]
+ENTRYPOINT [ "python3" ]
+CMD ["app.py"]
