@@ -23,7 +23,7 @@ def add():
   cur.execute(s)
   mysql.connection.commit()
 
-  return '{"Result":"Success"}' # Really? maybe we should check!
+  return '{"Result":"Success?"}' # Really? maybe we should check!
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
@@ -33,7 +33,7 @@ def read(): # Name of the method
   Results=[]
   for row in rv: #Format the Output Results and add to return string
     Result={}
-    Result['Name']=row[0].replace('\n',' $')
+    Result['Name']=row[0].replace('\n',' ')
     Result['Email']=row[1]
     Result['ID']=row[2]
     Results.append(Result)
