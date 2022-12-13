@@ -23,7 +23,7 @@ def add():
   cur.execute(s)
   mysql.connection.commit()
 
-  return f"<h1>'{'Result':'Success!'}'</h1>" # Really? maybe we should check!
+  return f"<h1>Hi</h1>" # Really? maybe we should check!
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
