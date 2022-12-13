@@ -27,9 +27,9 @@ def add():
 
 @app.route("/delete") #DeleteStudent
 def delete():
-  id = request.args.get('id')
+  name = request.args.get('name')
   cur = mysql.connection.cursor()
-  s=f"DELETE FROM students where studentID='{id}'"
+  s=f"DELETE FROM students where studentName='{name}'"
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
