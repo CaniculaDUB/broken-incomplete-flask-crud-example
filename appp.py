@@ -24,6 +24,12 @@ def add():
   mysql.connection.commit()
 
   return f"<h1>Successs</h1>" # Really? maybe we should check!
+
+@app.route("/delete") #DeleteStudent
+def delete():
+  id = request.args.get('id')
+  cur = mysql.connection.cursor()
+  s=f"DELETE FROM students where id='{id}'"
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
