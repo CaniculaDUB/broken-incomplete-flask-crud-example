@@ -29,7 +29,7 @@ def add():
 def delete():
   id = request.args.get('id')
   cur = mysql.connection.cursor()
-  s=f"DELETE FROM students where id='{id}'"
+  s=f"DELETE FROM students where studentID='{id}'"
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
