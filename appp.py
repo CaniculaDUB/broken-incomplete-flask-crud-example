@@ -32,8 +32,7 @@ def delete():
   name = request.json["name"]
   s=f"DELETE FROM students where studentName='{name}'"
   print(s)
-  cursor.execute(s)
-  mysql.connection.commit()
+  
   
   
   
