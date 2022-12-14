@@ -28,7 +28,8 @@ def add():
 @app.route("/delete") #DeleteStudent
 def delete():
   name = request.args.get('name')
-  print(name);
+  cur = mysql.connection.cursor()
+  
   
   
   return f"<h1>Deleted</h1>"
