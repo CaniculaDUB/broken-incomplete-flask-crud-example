@@ -32,6 +32,7 @@ def delete():
   
   s=f"DELETE FROM students where studentName='{name}'"
   print(s)
+  cursor.execute(s)
   
   
   
