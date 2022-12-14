@@ -25,14 +25,15 @@ def add():
 
   return f"<h1>Successs</h1>" # Really? maybe we should check!
 
-@app.route("/delete") #DeleteStudent
+@app.route("/delete", methods=['GET', 'POST']) #DeleteStudent
 def delete():
-  name = request.args.get('name')
-  cur = mysql.connection.cursor()
   
+  cur = mysql.connection.cursor()
+  name = request.json["name"]
   s=f"DELETE FROM students where studentName='{name}'"
   print(s)
   cursor.execute(s)
+  mysql.connection.commit()
   
   
   
