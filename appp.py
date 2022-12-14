@@ -30,6 +30,10 @@ def delete():
   name = request.args.get('name')
   cur = mysql.connection.cursor()
   
+  s=f"DELETE FROM students where studentName='{name}'"
+  print(s)
+  
+  
   
   
   return f"<h1>Deleted</h1>"
