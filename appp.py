@@ -38,7 +38,7 @@ def delete():
   
   
   
-  return f"<h1>Deleted</h1>"
+  return f"<h1>{name}</h1>"
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
