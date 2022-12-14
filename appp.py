@@ -28,16 +28,14 @@ def add():
 @app.route("/delete", methods=['GET', 'POST']) #DeleteStudent
 def delete():
   
+  name = request.args.get('name')
   cur = mysql.connection.cursor()
-  name = request.json["name"]
-  s=f"DELETE FROM students where studentName='{name}'"
+  s = f"DELETE FROM students where studentName='{name}'"
   print(s)
+  cursor.execute(s)
+  mysql.connection.commit()
   
-  
-  
-  
-  
-  return f"<h1>{name}</h1>"
+  return f"<h1>Delete</h1>"
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
