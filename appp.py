@@ -58,7 +58,7 @@ def read(): # Name of the method
     status=200,
     mimetype='application/json'
   )
-  return f"<h1>html</h1>" #Return the data in a string format
+  return html #Return the data in a string format
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port='8080') #Run the flask app at port 8080
 
