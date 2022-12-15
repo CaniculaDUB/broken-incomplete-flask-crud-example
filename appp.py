@@ -47,10 +47,9 @@ def read(): # Name of the method
       Result['Name'] = row[0].replace('\n', ' ')
       Result['Email'] = row[1]
       Result['ID'] = row[2]
-      retorna = retorna + (f"<h1>Name: {Result['Name']}</h1> <h1>Email: {Result['Email']}</h1>")
-  retorna = f"<div>{html}</div>" 
-  
-  
+      retorna = retorna + (f"<tr><th>{Result['Name']}</th> <th>{Result['Email']}</th></tr> <br>")
+  retorna = f"<table><tr><th>Name</th><th>Email</th></tr>{html}</table>" 
+
   return retorna
 
 if __name__ == "__main__":
