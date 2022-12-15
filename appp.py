@@ -38,7 +38,7 @@ def delete():
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
-  cur = mysql.connection.cursor() #create a connection to the SQL instance
+  cursor = mysql.connection.cursor() #create a connection to the SQL instance
   cursor.execute('''SELECT * FROM students''')  # execute an SQL statment
     rv = cursor.fetchall()  # Retreive all rows returend by the SQL statment
     Results = []
