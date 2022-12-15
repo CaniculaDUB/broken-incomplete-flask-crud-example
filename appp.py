@@ -25,9 +25,8 @@ def add():
 
   return f"<h1>Successs</h1>" # Really? maybe we should check!
 
-@app.route("/delete", methods=['GET', 'POST']) #DeleteStudent
+@app.route("/delete") #DeleteStudent
 def delete():
-  
   name = request.args.get('name')
   cur = mysql.connection.cursor()
   s = f"DELETE FROM students where studentName='{name}'"
