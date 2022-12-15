@@ -41,16 +41,16 @@ def read(): # Name of the method
   cur.execute('''SELECT * FROM students''')  # execute an SQL statment
   rv = cur.fetchall()  # Retreive all rows returend by the SQL statment
   Results = []
-  retorna = ""
+  html = ""
   for row in rv:  # Format the Output Results and add to return string
       Result = {}
       Result['Name'] = row[0].replace('\n', ' ')
       Result['Email'] = row[1]
       Result['ID'] = row[2]
-      retorna = retorna + (f"<tr><th>{Result['Name']}</th> <th>{Result['Email']}</th></tr> <br>")
-  retorna = f"<table><tr><th>Name</th><th>Email</th></tr>{html}</table>" 
+      html = html + (f"<tr><th>{Result['Name']}</th> <th>{Result['Email']}</th></tr> <br>")
+  html = f"<table><tr><th>Name</th><th>Email</th></tr>{html}</table>" 
 
-  return retorna
+  return html
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port='8080') #Run the flask app at port 8080
