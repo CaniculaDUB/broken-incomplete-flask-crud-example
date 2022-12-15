@@ -38,6 +38,7 @@ def delete():
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
+  cursor = mysql.connection.cursor() #create a connection to the SQL instance
   
   return f"<h1>html</h1>"
 
