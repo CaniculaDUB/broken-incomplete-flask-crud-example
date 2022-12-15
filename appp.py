@@ -49,9 +49,7 @@ def read(): # Name of the method
       Result['Email'] = row[1]
       Result['ID'] = row[2]
       html = html + (f"<tr style='border: 1px solid blue'><th  style='border: 1px solid blue'>{Result['Name']}</th> <th style='border: 1px solid blue'>{Result['Email']}</th></tr> <br>")
-
-  
-  
+  html = f"<table style='border: 1px solid blue'><tr style='border: 1px solid blue'><th  style='border: 1px solid blue'>Name</th><th style='border: 1px solid blue'>Email</th></tr>{html}</table>" 
   return f"<h1>html</h1>"
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port='8080') #Run the flask app at port 8080
