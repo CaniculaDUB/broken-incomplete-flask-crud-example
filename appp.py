@@ -38,13 +38,8 @@ def delete():
   
 @app.route("/") #Default - Show Data
 def read(): # Name of the method
-  cur = mysql.connection.cursor() #create a connection to the SQL instance
-  cur.execute('''SELECT * FROM students''') # execute an SQL statment
-  rv = cur.fetchall() #Retreive all rows returend by the SQL statment
-  Results=[]
-  html = ""
   
-  return html #Return the data in a string format
+  return f"<h1>html</h1>" #Return the data in a string format
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port='8080') #Run the flask app at port 8080
 
