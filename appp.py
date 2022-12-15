@@ -43,12 +43,6 @@ def read(): # Name of the method
   rv = cursor.fetchall()  # Retreive all rows returend by the SQL statment
   Results = []
   html = ""
-  for row in rv:  # Format the Output Results and add to return string
-      Result = {}
-      Result['Name'] = row[0].replace('\n', ' ')
-      Result['Email'] = row[1]
-      Result['ID'] = row[2]
-      html = html + (f"<tr style='border: 1px solid blue'><th  style='border: 1px solid blue'>{Result['Name']}</th> <th style='border: 1px solid blue'>{Result['Email']}</th></tr> <br>")
   return f"<h1>html</h1>"
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port='8080') #Run the flask app at port 8080
