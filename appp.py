@@ -40,9 +40,7 @@ def delete():
 def read(): # Name of the method
   cursor = mysql.connection.cursor() #create a connection to the SQL instance
   cursor.execute('''SELECT * FROM students''')  # execute an SQL statment
-  rv = cursor.fetchall()  # Retreive all rows returend by the SQL statment
-  Results = []
-  html = ""
+  
   return f"<h1>html</h1>"
 
 if __name__ == "__main__":
